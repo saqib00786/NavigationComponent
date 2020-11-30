@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.newdev.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_chooseRecepient"
+            app:destination="@id/chooseRecepient"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_viewBalance"
+            app:destination="@id/viewBalance"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewBalance"
+        android:name="com.example.newdev.ViewBalance"
+        android:label="ViewBalance"
+        tools:layout="@layout/fragment_viewbalance" />
+    <fragment
+        android:id="@+id/chooseRecepient"
+        android:name="com.example.newdev.ChooseRecepient"
+        android:label="ChooseRecepient"
+        tools:layout="@layout/fragment_choose_recepient">
+        <action
+            android:id="@+id/action_chooseRecepient_to_specifyAmount"
+            app:destination="@id/specifyAmount"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmation"
+        android:name="com.example.newdev.Confirmation"
+        android:label="Confirmation"
+        tools:layout="@layout/fragment_confirmation" />
+    <fragment
+        android:id="@+id/specifyAmount"
+        android:name="com.example.newdev.SpecifyAmount"
+        android:label="SpecifyAmount"
+        tools:layout="@layout/fragment_specify_amount">
+        <action
+            android:id="@+id/action_specifyAmount_to_confirmation"
+            app:destination="@id/confirmation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.example.newdev.TransactionFragment"
+        android:label="TransactionFragment"
+        tools:layout="@layout/fragment_transacation" />
+</navigation>
